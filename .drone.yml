@@ -8,5 +8,3 @@ pipeline:
 
 triggers:
   match: test this please
-  event:
-    - pull_request
