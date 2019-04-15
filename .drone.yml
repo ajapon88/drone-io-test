@@ -6,6 +6,8 @@ pipeline:
       - bundle install
       - bundle exec rspec spec
     when:
+      - event:
+	      - pull_request
       - image: plugins/github-comment
         type: create
         contains:
