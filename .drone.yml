@@ -5,8 +5,8 @@ pipeline:
       - gem install bundler -v 1.17.1
       - bundle install
       - bundle exec rspec spec
-
-trigger:
-  event:
-    - pull_request
-  match: test this please
+    when:
+      - image: plugins/github-comment
+        type: create
+        contains:
+          - test this please
